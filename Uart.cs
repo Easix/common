@@ -227,6 +227,17 @@ namespace Common
                 StopReceivedThread();
             }
         }
+        /// <summary>
+        /// 关闭串口
+        /// </summary>
+        public void ClosePort()
+        {
+            if(serialPort1.IsOpen == true)
+            {
+                serialPort1.Close();
+                StopReceivedThread();
+            }
+        }
         private void SttartReceivedThread()
         {
             thread1 = new Thread(new ThreadStart(UsartDataReceivedThead));
